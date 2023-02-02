@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-image: url('./assets/images/nature.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.nav_container{
+  height: 10vh;
+  /* background-color: gray; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0% 2%;
+  border-radius: 10px;
+  border-bottom: 1px solid rgb(92, 92, 92);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input_profile{
+  display: flex;
+  align-items: center;
+}
+
+.input_profile input{
+  padding: 5px;
+  border-radius: 10px;
+  /* border: none; */
+  margin-right: 20px;
+}
+
+.profile{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.profile img{
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+
+.asideAndalbum{
+  display: flex;
+  gap: 10px;
+  height: 90vh;
+  
+}
+
+
+/* aside */
+
+.aside_container{
+  padding-top: 20px;
+  flex: 1;
+  padding: 5px;
+
+  /* background-color: green; */
+}
+
+
+.aside_container div{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 5px;
+  margin: 10px 0px;
+  font-weight: 700;
+  margin-top: 0px;
+}
+
+.aside_container div input{
+  height: 20px;
+  padding: 5px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.aside_container div button{
+  width: 40%;
+  height: 30px;
+  font-size: larger;
+  font-weight: 900;
+  margin-top: 10px;
+}
+
+
+
+
+
+.album_container{
+  flex: 4;
+  /* background-color: orange; */
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  overflow-x: scroll;
+  padding: 2% 2% 2% 2%;
+}
+
+.each_info{
+  height: 20%;
+  width: 20%;
+  padding: 5px;
+  background-color: rgba(40, 40, 40, 0.5);
   color: white;
+  border-radius: 20px;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  transition: 600ms;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.each_info:hover{
+  box-shadow:0px 0px 5px 5px rgba(40, 40, 40, 0.2);
 }
