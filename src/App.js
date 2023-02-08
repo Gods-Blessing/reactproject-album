@@ -6,6 +6,7 @@ import Aside from './components/aside/Aside';
 
 
 function App() {
+  
   // state for list of items that we get on fetching the data from api
   const [list, setList] = useState([]);
 
@@ -29,13 +30,26 @@ function App() {
     setList((prevState)=>{
       return [{id: list.length+1, title: value.title }, ...prevState]
     })
+    
+  }
+
+  // function to delete an album
+  function deleteHandler(id){
+    const helped = list.filter((ele)=>{
+      if(ele.id !== id){
+        return ele;
+      }
+
+    })
+
+    setList(helped);
   }
 
 
   useEffect(()=>{
     // fetching the data from the api
     async function getMemes() {
-      const arr = [];
+      // const arr = [];
       const res = await fetch("https://jsonplaceholder.typicode.com/albums")
       const data = await res.json();
       // setting the fetched data into the state
@@ -58,7 +72,7 @@ function App() {
       <Navbar/>
       <div className='asideAndalbum'>
         <Aside mystate={value} myhandleState={handleValue} handleState={handlestate}/>
-        <Album list={list}/>    
+        <Album list={list} del={deleteHandler}/>    
       </div>
     </div>
   );

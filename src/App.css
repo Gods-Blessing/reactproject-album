@@ -104,15 +104,32 @@ body{
 }
 
 .each_info{
-  height: 20%;
+  height: 25%;
   width: 20%;
-  padding: 5px;
+  padding: 10px;
   background-color: rgba(40, 40, 40, 0.5);
   color: white;
   border-radius: 20px;
   align-items: center;
   backdrop-filter: blur(5px);
   transition: 600ms;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  overflow-y: scroll;
+}
+
+.each_info::-webkit-scrollbar {
+  display: none;
+}
+
+.edit{
+  margin-bottom: 5px;
+}
+
+.ammend button{
+  margin-top: 5px;
 }
 
 .each_info:hover{
